@@ -1,0 +1,431 @@
+{
+	"info": {
+		"name": "Escola API",
+		"description": "Collection com todos os endpoints CRUD do sistema de gestao escolar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5050"
+		}
+	],
+	"item": [
+		{
+			"name": "Health Check",
+			"item": [
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/",
+							"host": ["{{base_url}}"],
+							"path": [""]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Alunos",
+			"item": [
+				{
+					"name": "Listar Alunos",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/alunos",
+							"host": ["{{base_url}}"],
+							"path": ["alunos"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Aluno por ID",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/alunos/1",
+							"host": ["{{base_url}}"],
+							"path": ["alunos", "1"]
+						}
+					}
+				},
+				{
+					"name": "Criar Aluno",
+					"request": {
+						"method": "POST",
+						"url": {
+							"raw": "{{base_url}}/alunos",
+							"host": ["{{base_url}}"],
+							"path": ["alunos"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Lucas Ferreira\",\n\t\"email\": \"lucas.ferreira@aluno.com\",\n\t\"data_nascimento\": \"2002-03-10\",\n\t\"cpf\": \"123.456.789-00\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Atualizar Aluno",
+					"request": {
+						"method": "PUT",
+						"url": {
+							"raw": "{{base_url}}/alunos/1",
+							"host": ["{{base_url}}"],
+							"path": ["alunos", "1"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Joao Souza Atualizado\",\n\t\"email\": \"joao.souza.novo@aluno.com\",\n\t\"data_nascimento\": \"2000-05-15\",\n\t\"cpf\": \"111.222.333-44\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Deletar Aluno",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "{{base_url}}/alunos/1",
+							"host": ["{{base_url}}"],
+							"path": ["alunos", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Professores",
+			"item": [
+				{
+					"name": "Listar Professores",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/professores",
+							"host": ["{{base_url}}"],
+							"path": ["professores"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Professor por ID",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/professores/1",
+							"host": ["{{base_url}}"],
+							"path": ["professores", "1"]
+						}
+					}
+				},
+				{
+					"name": "Criar Professor",
+					"request": {
+						"method": "POST",
+						"url": {
+							"raw": "{{base_url}}/professores",
+							"host": ["{{base_url}}"],
+							"path": ["professores"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Fernanda Rocha\",\n\t\"email\": \"fernanda.rocha@escola.com\",\n\t\"especialidade\": \"Inteligencia Artificial\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Atualizar Professor",
+					"request": {
+						"method": "PUT",
+						"url": {
+							"raw": "{{base_url}}/professores/1",
+							"host": ["{{base_url}}"],
+							"path": ["professores", "1"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Carlos Silva Atualizado\",\n\t\"email\": \"carlos.silva@escola.com\",\n\t\"especialidade\": \"Seguranca Ofensiva\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Deletar Professor",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "{{base_url}}/professores/1",
+							"host": ["{{base_url}}"],
+							"path": ["professores", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Cursos",
+			"item": [
+				{
+					"name": "Listar Cursos",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/cursos",
+							"host": ["{{base_url}}"],
+							"path": ["cursos"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Curso por ID",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/cursos/1",
+							"host": ["{{base_url}}"],
+							"path": ["cursos", "1"]
+						}
+					}
+				},
+				{
+					"name": "Criar Curso",
+					"request": {
+						"method": "POST",
+						"url": {
+							"raw": "{{base_url}}/cursos",
+							"host": ["{{base_url}}"],
+							"path": ["cursos"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Cloud Computing\",\n\t\"descricao\": \"Fundamentos de computacao em nuvem com AWS e Azure\",\n\t\"carga_horaria\": 120,\n\t\"professor_id\": 1\n}"
+						}
+					}
+				},
+				{
+					"name": "Atualizar Curso",
+					"request": {
+						"method": "PUT",
+						"url": {
+							"raw": "{{base_url}}/cursos/1",
+							"host": ["{{base_url}}"],
+							"path": ["cursos", "1"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Cybersecurity Avancado\",\n\t\"descricao\": \"Seguranca ofensiva e defensiva\",\n\t\"carga_horaria\": 100,\n\t\"professor_id\": 1\n}"
+						}
+					}
+				},
+				{
+					"name": "Deletar Curso",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "{{base_url}}/cursos/1",
+							"host": ["{{base_url}}"],
+							"path": ["cursos", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Matriculas",
+			"item": [
+				{
+					"name": "Listar Matriculas",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/matriculas",
+							"host": ["{{base_url}}"],
+							"path": ["matriculas"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Matricula por ID",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/matriculas/1",
+							"host": ["{{base_url}}"],
+							"path": ["matriculas", "1"]
+						}
+					}
+				},
+				{
+					"name": "Criar Matricula",
+					"request": {
+						"method": "POST",
+						"url": {
+							"raw": "{{base_url}}/matriculas",
+							"host": ["{{base_url}}"],
+							"path": ["matriculas"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"aluno_id\": 2,\n\t\"curso_id\": 3,\n\t\"data_matricula\": \"2024-08-01\",\n\t\"status\": \"ativa\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Atualizar Matricula",
+					"request": {
+						"method": "PUT",
+						"url": {
+							"raw": "{{base_url}}/matriculas/1",
+							"host": ["{{base_url}}"],
+							"path": ["matriculas", "1"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"aluno_id\": 1,\n\t\"curso_id\": 1,\n\t\"status\": \"trancada\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Deletar Matricula",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "{{base_url}}/matriculas/1",
+							"host": ["{{base_url}}"],
+							"path": ["matriculas", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Notas",
+			"item": [
+				{
+					"name": "Listar Notas",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/notas",
+							"host": ["{{base_url}}"],
+							"path": ["notas"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Nota por ID",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/notas/1",
+							"host": ["{{base_url}}"],
+							"path": ["notas", "1"]
+						}
+					}
+				},
+				{
+					"name": "Criar Nota",
+					"request": {
+						"method": "POST",
+						"url": {
+							"raw": "{{base_url}}/notas",
+							"host": ["{{base_url}}"],
+							"path": ["notas"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"matricula_id\": 1,\n\t\"valor\": 7.5,\n\t\"descricao\": \"Prova 3\",\n\t\"data_avaliacao\": \"2024-09-20\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Atualizar Nota",
+					"request": {
+						"method": "PUT",
+						"url": {
+							"raw": "{{base_url}}/notas/1",
+							"host": ["{{base_url}}"],
+							"path": ["notas", "1"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"matricula_id\": 1,\n\t\"valor\": 9.0,\n\t\"descricao\": \"Prova 1 - Revisada\",\n\t\"data_avaliacao\": \"2024-03-15\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Deletar Nota",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "{{base_url}}/notas/1",
+							"host": ["{{base_url}}"],
+							"path": ["notas", "1"]
+						}
+					}
+				}
+			]
+		}
+	]
+}
